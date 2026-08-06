@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>导航发布页 - 在线演示</title>
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  :root {
+    --theme:#2FD18A;
+    --desktop-bg:radial-gradient(circle at 12% 15%, rgba(47,209,138,.30), transparent 34%), radial-gradient(circle at 82% 8%, rgba(91,141,255,.20), transparent 34%), linear-gradient(135deg, #05070b 0%, #101723 55%, #07130f 100%);
+    --mobile-bg:radial-gradient(circle at 20% 20%, rgba(59,130,246,.30), transparent 32%), radial-gradient(circle at 80% 30%, rgba(14,165,233,.18), transparent 38%), linear-gradient(135deg, #06111f 0%, #0d172a 48%, #020617 100%);
+  }
+  .demo-banner {
+    background: rgba(47,209,138,.12);
+    border: 1px solid rgba(47,209,138,.35);
+    border-radius: 10px;
+    color: #9ff0c8;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+    padding: 10px 14px;
+  }
+  .demo-banner b { color: #2FD18A; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="main-card">
+    <div class="demo-banner">🎭 <b>静态演示版</b>（GitHub Pages）：仅展示前台界面与交互效果，按钮为示例数据；<b>后台管理、数据库、点击统计</b>需要部署 PHP + MySQL 后可用，详见 <a href="https://github.com/26198048/nav-publish-page" target="_blank" rel="noopener noreferrer" style="color:#2FD18A">仓库 README</a>。</div>
+    <header class="hero">
+      <img class="logo" src="assets/img/logo.png" alt="Logo" onerror="this.style.display='none'">
+      <div>
+        <h1>导航发布页</h1>
+        <p>请 Ctrl+D 收藏本页到浏览器收藏夹</p>
+      </div>
+    </header>
+
+    <div class="permanent">
+      <span>永久地址</span>
+      <strong id="permanentUrl">https://github.com/26198048/nav-publish-page</strong>
+      <button type="button" id="copyPermanent">复制</button>
+    </div>
+
+    <div class="notice">以下为演示数据：支持跳转链接、弹窗提示、点击复制三种交互方式，可试用顶部搜索与分类筛选。</div>
+
+    <div class="front-controls">
+      <div class="front-search">
+        <span>搜索</span>
+        <input type="search" id="buttonSearch" placeholder="输入关键词搜索入口" autocomplete="off">
+      </div>
+      <div class="category-filter" id="categoryFilter">
+        <button type="button" class="active" data-category="all">全部</button>
+        <button type="button" data-category="系统平台">系统平台</button>
+        <button type="button" data-category="常用入口">常用入口</button>
+        <button type="button" data-category="沟通客服">沟通客服</button>
+        <button type="button" data-category="下载工具">下载工具</button>
+        <button type="button" data-category="活动权益">活动权益</button>
+        <button type="button" data-category="内容娱乐">内容娱乐</button>
+        <button type="button" data-category="安全状态">安全状态</button>
+      </div>
+    </div>
+
+    <div class="grid" id="buttonGrid">
+      <a class="nav-item" href="https://www.apple.com/" target="_blank" rel="noopener noreferrer" data-nav-item data-category="系统平台" data-search="ios 入口 苹果 系统平台">
+        <span class="left"><span class="icon"><img src="assets/img/icon-ios.svg" alt="" loading="lazy" decoding="async"></span><span><b>iOS 入口</b><em>苹果系统下载与官方入口</em></span></span>
+        <span class="tag">进入</span>
+      </a>
+
+      <a class="nav-item" href="https://www.android.com/" target="_blank" rel="noopener noreferrer" data-nav-item data-category="系统平台" data-search="android 入口 安卓 系统平台">
+        <span class="left"><span class="icon"><img src="assets/img/icon-android.svg" alt="" loading="lazy" decoding="async"></span><span><b>Android 入口</b><em>安卓系统官方入口</em></span></span>
+        <span class="tag">进入</span>
+      </a>
+
+      <button class="nav-item copy-trigger" type="button" data-nav-item data-category="沟通客服" data-search="微信 客服 加好友 沟通客服" data-copy="微信号：demo_wechat_2026">
+        <span class="left"><span class="icon">💬</span><span><b>添加微信</b><em>点击复制客服微信号</em></span></span>
+        <span class="tag">复制</span>
+      </button>
+
+      <button class="nav-item popup-trigger" type="button" data-nav-item data-category="沟通客服" data-search="qq 客服 咨询 沟通客服" data-title="QQ 客服" data-content="客服 QQ：10001\n工作时间：周一至周五 9:00-18:00\n请备注"游戏昵称"方便核对。">
+        <span class="left"><span class="icon">🎧</span><span><b>QQ 客服</b><em>点击查看客服联系方式</em></span></span>
+        <span class="tag">查看</span>
+      </button>
+
+      <a class="nav-item" href="https://example.com/" target="_blank" rel="noopener noreferrer" data-nav-item data-category="常用入口" data-search="官网 首页 常用入口">
+        <span class="left"><span class="icon">🌐</span><span><b>官方网站</b><em>项目官网首页</em></span></span>
+        <span class="tag">进入</span>
+      </a>
+
+      <button class="nav-item popup-trigger" type="button" data-nav-item data-category="活动权益" data-search="新用户 礼包 活动 权益" data-title="新人礼包" data-content="注册即送：\n- 7 天会员体验\n- 100 积分\n- 专属头像框\n活动长期有效。">
+        <span class="left"><span class="icon">🎁</span><span><b>新人礼包</b><em>新用户注册专属权益</em></span></span>
+        <span class="tag">查看</span>
+      </button>
+
+      <a class="nav-item" href="https://example.com/download" target="_blank" rel="noopener noreferrer" data-nav-item data-category="下载工具" data-search="客户端 下载 工具">
+        <span class="left"><span class="icon">📥</span><span><b>客户端下载</b><em>下载最新版客户端</em></span></span>
+        <span class="tag">进入</span>
+      </a>
+
+      <button class="nav-item popup-trigger" type="button" data-nav-item data-category="内容娱乐" data-search="公告 版本 更新 内容娱乐" data-title="版本公告" data-content="v1.02 已发布：\n- 新增前台搜索与分类筛选\n- 新增点击复制交互\n- 修复若干已知问题">
+        <span class="left"><span class="icon">📢</span><span><b>版本公告</b><em>查看最新更新内容</em></span></span>
+        <span class="tag">查看</span>
+      </button>
+
+      <button class="nav-item copy-trigger" type="button" data-nav-item data-category="安全状态" data-search="举报 投诉 安全 状态" data-copy="举报邮箱：report@example.com\n请附上相关截图与说明。">
+        <span class="left"><span class="icon">🛡️</span><span><b>举报反馈</b><em>点击复制举报邮箱</em></span></span>
+        <span class="tag">复制</span>
+      </button>
+
+      <a class="nav-item" href="https://github.com/" target="_blank" rel="noopener noreferrer" data-nav-item data-category="常用入口" data-search="github 开源 仓库 常用入口">
+        <span class="left"><span class="icon">🐙</span><span><b>开源仓库</b><em>本项目 GitHub 仓库</em></span></span>
+        <span class="tag">进入</span>
+      </a>
+    </div>
+
+    <div class="empty no-results" id="noResults" hidden>没有找到匹配的入口，请换个关键词或分类。</div>
+  </section>
+  <footer>© 2026 All Rights Reserved · 静态演示版</footer>
+</main>
+
+<div class="modal-mask" id="modalMask" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" type="button" id="modalClose" aria-label="关闭">×</button>
+    <h2 id="modalTitle"></h2>
+    <div id="modalContent" class="modal-content"></div>
+    <button class="modal-ok" type="button" id="modalOk">我知道了</button>
+  </div>
+</div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
