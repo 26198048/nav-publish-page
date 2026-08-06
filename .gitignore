@@ -1,0 +1,21 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# 上传目录中的实际文件不入库（保留目录结构）
+i/*
+b/*
+l/*
+!i/.htaccess
+!b/.htaccess
+!l/.htaccess
+
+# 本地测试
+*.log
